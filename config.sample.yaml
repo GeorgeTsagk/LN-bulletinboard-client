@@ -1,0 +1,5 @@
+c13n:
+  url: replaceme
+
+service-node:
+  address: "replaceme"
