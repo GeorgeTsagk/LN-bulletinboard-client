@@ -25,8 +25,6 @@ var nodeInfoClient = new services.NodeInfoService(api.apiUrl(), grpc.credentials
 nodeInfoClient.GetSelfInfo(
     {},
     (err, res) => {
-        console.log('err:', err)
-        console.log('res:', res)
     }
 )
 

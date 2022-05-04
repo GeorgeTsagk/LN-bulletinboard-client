@@ -79,14 +79,7 @@ const purchaseItem = async (disc, item) => {
                     resolve(1)
                 }
                 if(res){
-                    messageClient.SubscribeMessages({})
-                    .on('data', (res) => {
-                        console.log('SUCCESSFULLY PURCHASED ITEM', item)
-                        console.log(res.received_message.payload)
-                    })
-                    .on('end', () => {
-                        resolve(1)
-                    })
+                    
                 }
             }
         )
@@ -95,6 +88,15 @@ const purchaseItem = async (disc, item) => {
 }
 
 const startClient = async () => {
+    messageClient.SubscribeMessages({})
+    .on('data', (res) => {
+        console.log('---------------------------')
+        console.log('SUCCESSFULLY PURCHASED ITEM')
+        console.log(res.received_message.payload)
+        console.log('---------------------------\n')        
+    })
+    .on('end', () => {
+    })
     let doc
     try {
         doc = yaml.load(fs.readFileSync(__dirname + '/../config.yaml', 'utf8'));
@@ -102,7 +104,6 @@ const startClient = async () => {
         console.log(e);
     }
     const disc = await findDiscussion(doc['service-node'].address)
-    console.log("Got disc: ", disc)
     console.log("Enter name of item you want to purchase:")
     rl.on('line', function(line){
         if(line == "exit") exit(0)
