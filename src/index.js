@@ -13,25 +13,16 @@ var packageDefinition = protoLoader.loadSync(
 
 var services = grpc.loadPackageDefinition(packageDefinition).services;
 
-const server = require('./server')
+const client = require('./client')
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-var nodeInfoClient = new services.NodeInfoService(api.apiUrl(), grpc.credentials.createInsecure())
-
-
-nodeInfoClient.GetSelfInfo(
-    {},
-    (err, res) => {
-    }
-)
-
 const start = async () => {
     await sleep(1000)
     try{
-        await server.startClient()
+        await client.startClient()
     } catch (e) { 
         console.log(e)
     }
