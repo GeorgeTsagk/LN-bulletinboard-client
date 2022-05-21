@@ -1,22 +1,11 @@
 {
-  "name": "c13n-dummy-service",
-  "version": "1.0.0",
-  "description": "",
+  "name": "c13n-bulletin-board-client",
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GeorgeTsagk/c13n-dummy-service.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GeorgeTsagk/c13n-dummy-service/issues"
-  },
-  "homepage": "https://github.com/GeorgeTsagk/c13n-dummy-service#readme",
+  "license": "MIT",
   "dependencies": {
     "@grpc/grpc-js": "^1.4.4",
     "@grpc/proto-loader": "^0.6.6",
