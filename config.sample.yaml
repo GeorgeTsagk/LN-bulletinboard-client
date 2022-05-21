@@ -1,5 +1,5 @@
 c13n:
-  url: replaceme
+  url: replaceme # Host and port of the c13n API of your node.
 
 service-node:
-  address: "replaceme"
+  address: "replaceme" # The address of the node running the Bulletin Board Server.
